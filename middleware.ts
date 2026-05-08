@@ -6,6 +6,9 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
+  // Run in Node.js runtime instead of Edge — @supabase/ssr's transitive
+  // deps aren't fully Edge-compatible in newer versions.
+  runtime: "nodejs",
   matcher: [
     /*
      * Match all request paths except for the ones starting with:
