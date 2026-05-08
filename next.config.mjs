@@ -9,6 +9,7 @@ const nextConfig = {
   eslint: { ignoreDuringBuilds: true },
   experimental: {
     serverActions: { bodySizeLimit: "10mb" }, // for .docx uploads
+    nodeMiddleware: true, // enable Node.js runtime in middleware (for @supabase/ssr)
   },
   async headers() {
     return [
