@@ -1,0 +1,52 @@
+{
+  "name": "Spanish Mastery",
+  "short_name": "Spanish",
+  "description": "Personal Spanish learning platform — vocab, grammar, reading, exams.",
+  "start_url": "/dashboard",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fbf6ee",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Study now",
+      "short_name": "Study",
+      "url": "/study",
+      "description": "Jump straight into a flashcard session"
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Stats",
+      "url": "/dashboard",
+      "description": "Your progress at a glance"
+    },
+    {
+      "name": "Take exam",
+      "short_name": "Exam",
+      "url": "/exam",
+      "description": "Run a CEFR check-in"
+    }
+  ],
+  "categories": ["education", "productivity"]
+}
