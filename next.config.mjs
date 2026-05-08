@@ -22,6 +22,13 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // CDN-level redirect: / -> /login. The login page redirects authenticated
+      // users to /dashboard client-side.
+      { source: "/", destination: "/login", permanent: false },
+    ];
+  },
 };
 
 export default nextConfig;

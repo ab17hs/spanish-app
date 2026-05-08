@@ -1,9 +1,5 @@
-import { redirect } from "next/navigation";
-
-// Root URL: always send users to /login. The login page will detect an
-// existing session and bounce them to /dashboard if they're already signed in.
-// Kept synchronous (no Supabase call here) to avoid any cookie/runtime issues
-// on the root route.
+// This route is short-circuited by the `redirects()` rule in next.config.mjs
+// before it ever hits this file. It exists only so Next has a `/` route entry.
 export default function Root() {
-  redirect("/login");
+  return null;
 }
