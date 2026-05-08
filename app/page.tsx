@@ -1,9 +1,9 @@
 import { redirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
 
-// Server-side root redirect. Replaces the previous middleware-based redirect.
-export default async function Root() {
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  redirect(user ? "/dashboard" : "/login");
+// Root URL: always send users to /login. The login page will detect an
+// existing session and bounce them to /dashboard if they're already signed in.
+// Kept synchronous (no Supabase call here) to avoid any cookie/runtime issues
+// on the root route.
+export default function Root() {
+  redirect("/login");
 }
