@@ -1,22 +1,9 @@
-import { type NextRequest } from "next/server";
-import { updateSession } from "@/lib/supabase/middleware";
-
-export async function middleware(request: NextRequest) {
-  return await updateSession(request);
-}
+// Middleware intentionally disabled. Auth checks happen server-side in
+// `app/(app)/layout.tsx` and `app/page.tsx` instead, which avoids Edge/Node
+// runtime compatibility issues with @supabase/ssr on Vercel.
+//
+// To re-enable: replace this file with the previous magic-link gating logic.
 
 export const config = {
-  // Run in Node.js runtime instead of Edge — @supabase/ssr's transitive
-  // deps aren't fully Edge-compatible in newer versions.
-  runtime: "nodejs",
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico, manifest, icons
-     * - api/export (allows direct download links to work)
-     */
-    "/((?!_next/static|_next/image|favicon.ico|manifest.webmanifest|icon-.*\\.png|sw.js).*)",
-  ],
+  matcher: [],
 };
